@@ -60,8 +60,8 @@
 
     dispatch_async(dispatch_queue_create("com.SWPinYinSearcher.tableViewData.HanZi2PinYinQueue", DISPATCH_QUEUE_SERIAL), ^{
         for (TableDataModel *onePerson in originalData) {
-            onePerson.quanpin = [SWPinYinConverter toPinyin:onePerson.name];
-            onePerson.jianpin = [SWPinYinConverter toPinyinAcronym:onePerson.name];
+            onePerson.quanpin = [onePerson.name toPinyin];
+            onePerson.jianpin = [onePerson.name toPinyinAcronym];
         }
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
@@ -96,13 +96,8 @@
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     dispatch_async(dispatch_queue_create("com.SWPinYinSearcher.textChange.queue", DISPATCH_QUEUE_SERIAL), ^{
-        
         // 搜索拼音和汉字（默认，无option）
-            self.tableData = [originalData filteredArrayUsingPredicate:[SWPinYinSearcher predicateWithEvaluateStringKeyPath:@"name" searchString:searchText]];
-        
-        // 只搜索拼音
-//        self.tableData = [originalData filteredArrayUsingPredicate:[SWPinYinSearcher predicateWithEvaluateStringKeyPath:@"name" searchString:searchText searchOption:SWPinyinSearchOptionsJianPin | SWPinyinSearchOptionsQuanPin | SWPinyinSearchOptionsIgnoreWhiteSpaces]];
-    
+        self.tableData = [originalData searchPinYinWithKeyPath:@"name" searchString:searchText];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
         });
