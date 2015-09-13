@@ -7,7 +7,7 @@
 * 默认选项的搜索：
 
 ```objective-c
-NSArray *results = NSArray *result = [self.tableData searchPinYinWithKeyPath:@"name" searchString:searchText];
+NSArray *result = [self.tableData searchPinYinWithKeyPath:@"name" searchString:searchText];
 ```  
 `KeyPath`：用于过滤的String在Array的Object中的KeyPath。  
 `searchString`：可以是全拼，简拼和汉字，会忽略字符首尾的空白。默认开启多重搜索，既多个搜索字符用空白隔开。
