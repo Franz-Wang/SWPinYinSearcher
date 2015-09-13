@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0885347F1B929F5A004494C1 /* NSArray+PinYinSearcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 0885347E1B929F5A004494C1 /* NSArray+PinYinSearcher.m */; };
-		088534821B92A130004494C1 /* NSString+PinYinConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 088534811B92A130004494C1 /* NSString+PinYinConverter.m */; };
 		0896EA091B8FF5D1008128F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0896EA081B8FF5D1008128F4 /* main.m */; };
 		0896EA0C1B8FF5D1008128F4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0896EA0B1B8FF5D1008128F4 /* AppDelegate.m */; };
 		0896EA0F1B8FF5D1008128F4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0896EA0E1B8FF5D1008128F4 /* ViewController.m */; };
@@ -16,7 +14,9 @@
 		0896EA141B8FF5D1008128F4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0896EA131B8FF5D1008128F4 /* Images.xcassets */; };
 		0896EA171B8FF5D1008128F4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0896EA151B8FF5D1008128F4 /* LaunchScreen.xib */; };
 		0896EA231B8FF5D1008128F4 /* SWPinYinSeacher_ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0896EA221B8FF5D1008128F4 /* SWPinYinSeacher_ExampleTests.m */; };
-		08DB8E021B8FFA83005543B1 /* hanzi2pinyin_v2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 08DB8DFD1B8FFA83005543B1 /* hanzi2pinyin_v2.txt */; };
+		B21C9A1C1BA5C0080019F685 /* hanzi2pinyin_v2.txt in Resources */ = {isa = PBXBuildFile; fileRef = B21C9A161BA5C0080019F685 /* hanzi2pinyin_v2.txt */; };
+		B21C9A1D1BA5C0080019F685 /* NSArray+PinYinSearcher.m in Sources */ = {isa = PBXBuildFile; fileRef = B21C9A181BA5C0080019F685 /* NSArray+PinYinSearcher.m */; };
+		B21C9A1E1BA5C0080019F685 /* NSString+PinYinConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = B21C9A1A1BA5C0080019F685 /* NSString+PinYinConverter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,10 +30,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0885347D1B929F5A004494C1 /* NSArray+PinYinSearcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+PinYinSearcher.h"; sourceTree = "<group>"; };
-		0885347E1B929F5A004494C1 /* NSArray+PinYinSearcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+PinYinSearcher.m"; sourceTree = "<group>"; };
-		088534801B92A130004494C1 /* NSString+PinYinConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PinYinConverter.h"; sourceTree = "<group>"; };
-		088534811B92A130004494C1 /* NSString+PinYinConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PinYinConverter.m"; sourceTree = "<group>"; };
 		0896EA031B8FF5D1008128F4 /* SWPinYinSeacher_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SWPinYinSeacher_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0896EA071B8FF5D1008128F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0896EA081B8FF5D1008128F4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -47,8 +43,12 @@
 		0896EA1C1B8FF5D1008128F4 /* SWPinYinSeacher_ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SWPinYinSeacher_ExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0896EA211B8FF5D1008128F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0896EA221B8FF5D1008128F4 /* SWPinYinSeacher_ExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWPinYinSeacher_ExampleTests.m; sourceTree = "<group>"; };
-		08DB8DFA1B8FFA83005543B1 /* SWPinYinHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWPinYinHeader.h; path = SWPinYinSearcher/SWPinYinHeader.h; sourceTree = "<group>"; };
-		08DB8DFD1B8FFA83005543B1 /* hanzi2pinyin_v2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hanzi2pinyin_v2.txt; path = SWPinYinSearcher/hanzi2pinyin_v2.txt; sourceTree = "<group>"; };
+		B21C9A161BA5C0080019F685 /* hanzi2pinyin_v2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hanzi2pinyin_v2.txt; sourceTree = "<group>"; };
+		B21C9A171BA5C0080019F685 /* NSArray+PinYinSearcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+PinYinSearcher.h"; sourceTree = "<group>"; };
+		B21C9A181BA5C0080019F685 /* NSArray+PinYinSearcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+PinYinSearcher.m"; sourceTree = "<group>"; };
+		B21C9A191BA5C0080019F685 /* NSString+PinYinConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PinYinConverter.h"; sourceTree = "<group>"; };
+		B21C9A1A1BA5C0080019F685 /* NSString+PinYinConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PinYinConverter.m"; sourceTree = "<group>"; };
+		B21C9A1B1BA5C0080019F685 /* SWPinYinHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWPinYinHeader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +90,7 @@
 		0896EA051B8FF5D1008128F4 /* SWPinYinSeacher_Example */ = {
 			isa = PBXGroup;
 			children = (
-				08DB8DF91B8FFA66005543B1 /* SWPinYinSearcher */,
+				B21C9A151BA5C0080019F685 /* SWPinYinSearcher */,
 				0896EA0A1B8FF5D1008128F4 /* AppDelegate.h */,
 				0896EA0B1B8FF5D1008128F4 /* AppDelegate.m */,
 				0896EA0D1B8FF5D1008128F4 /* ViewController.h */,
@@ -129,17 +129,18 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		08DB8DF91B8FFA66005543B1 /* SWPinYinSearcher */ = {
+		B21C9A151BA5C0080019F685 /* SWPinYinSearcher */ = {
 			isa = PBXGroup;
 			children = (
-				08DB8DFA1B8FFA83005543B1 /* SWPinYinHeader.h */,
-				0885347D1B929F5A004494C1 /* NSArray+PinYinSearcher.h */,
-				0885347E1B929F5A004494C1 /* NSArray+PinYinSearcher.m */,
-				088534801B92A130004494C1 /* NSString+PinYinConverter.h */,
-				088534811B92A130004494C1 /* NSString+PinYinConverter.m */,
-				08DB8DFD1B8FFA83005543B1 /* hanzi2pinyin_v2.txt */,
+				B21C9A161BA5C0080019F685 /* hanzi2pinyin_v2.txt */,
+				B21C9A171BA5C0080019F685 /* NSArray+PinYinSearcher.h */,
+				B21C9A181BA5C0080019F685 /* NSArray+PinYinSearcher.m */,
+				B21C9A191BA5C0080019F685 /* NSString+PinYinConverter.h */,
+				B21C9A1A1BA5C0080019F685 /* NSString+PinYinConverter.m */,
+				B21C9A1B1BA5C0080019F685 /* SWPinYinHeader.h */,
 			);
 			name = SWPinYinSearcher;
+			path = ../../SWPinYinSearcher;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,7 +226,7 @@
 				0896EA121B8FF5D1008128F4 /* Main.storyboard in Resources */,
 				0896EA171B8FF5D1008128F4 /* LaunchScreen.xib in Resources */,
 				0896EA141B8FF5D1008128F4 /* Images.xcassets in Resources */,
-				08DB8E021B8FFA83005543B1 /* hanzi2pinyin_v2.txt in Resources */,
+				B21C9A1C1BA5C0080019F685 /* hanzi2pinyin_v2.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,11 +244,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0885347F1B929F5A004494C1 /* NSArray+PinYinSearcher.m in Sources */,
 				0896EA0F1B8FF5D1008128F4 /* ViewController.m in Sources */,
 				0896EA0C1B8FF5D1008128F4 /* AppDelegate.m in Sources */,
+				B21C9A1D1BA5C0080019F685 /* NSArray+PinYinSearcher.m in Sources */,
+				B21C9A1E1BA5C0080019F685 /* NSString+PinYinConverter.m in Sources */,
 				0896EA091B8FF5D1008128F4 /* main.m in Sources */,
-				088534821B92A130004494C1 /* NSString+PinYinConverter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

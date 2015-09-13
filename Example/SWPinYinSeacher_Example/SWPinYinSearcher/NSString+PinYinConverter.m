@@ -1,41 +1,48 @@
 //
-//  SWPinYinConverter.m
-//  test--tableSearchInContact
+//  NSString+PinYinConverter.m
+//  SWPinYinSeacher_Example
 //
-//  Created by SWxs on 8/26/15.
-//  Copyright (c) 2015 SWxs. All rights reserved.
+//  Created by game-netease on 8/30/15.
+//  Copyright (c) 2015 game-netease. All rights reserved.
 //
 
-#import "SWPinYinConverter.h"
+#import "NSString+PinYinConverter.h"
 
 static NSDictionary *hanzi2pinyin;
 
-@implementation SWPinYinConverter
+@implementation NSString (PinYinConverter)
 
-+ (NSString *)toPinyin:(NSString *)string {
-    return [self toPinyin:string separator:nil];
-}
-+ (NSString *)toPinyin:(NSString *)string separator:(NSString *)separator {
-    return [[self toPinyinArray:string separator:separator] firstObject];
+- (NSString *)toPinyin {
+    return [[self toPinyinArrayWithSeparator:nil isAcronym:NO] firstObject];
 }
 
-+ (NSString *)toPinyinAcronym:(NSString *)string {
-    return [[self toPinyinAcronymArray:string] firstObject];
+- (NSArray *)toPinyinArray {
+    return [self toPinyinArrayWithSeparator:nil isAcronym:NO];
 }
 
-+ (NSArray *)toPinyinAcronymArray:(NSString *)string {
-    return [self toPinyinArray:string separator:nil isAcronym:YES];
+- (NSString *)toPinyinWithSeparator:(NSString *)separator {
+    return [[self toPinyinArrayWithSeparator:separator isAcronym:NO] firstObject];
 }
 
-+ (NSArray *)toPinyinArray:(NSString *)string separator:(NSString *)separator {
-    return [self toPinyinArray:string separator:separator isAcronym:NO];
+- (NSString *)toPinyinAcronym {
+    return [[self toPinyinArrayWithSeparator:nil isAcronym:YES] firstObject];
 }
 
-+ (NSArray *)toPinyinArray:(NSString *)string separator:(NSString *)separator isAcronym:(BOOL)isAcronym{
+- (NSArray *)toPinyinAcronymArray {
+    return [self toPinyinArrayWithSeparator:nil isAcronym:YES];
+}
+
+- (NSArray *)toPinyinArrayWithSeparator:(NSString *)separator {
+    return [self toPinyinArrayWithSeparator:separator isAcronym:NO];
+}
+
+#pragma mark - private
+
+- (NSArray *)toPinyinArrayWithSeparator:(NSString *)separator isAcronym:(BOOL)isAcronym {
     NSMutableArray *allCharactersPinyins = [NSMutableArray array];
     [self setupHashtable];
-    for (int i=0; i<string.length; i++) {
-        NSString *pinyinString = hanzi2pinyin[[string substringWithRange:NSMakeRange(i, 1)]];
+    for (int i=0; i<self.length; i++) {
+        NSString *pinyinString = hanzi2pinyin[[self substringWithRange:NSMakeRange(i, 1)]];
         [allCharactersPinyins addObject:[pinyinString componentsSeparatedByString:@","]];
     }
     int numberOfPinyinCombinations = 1;     // 所有可能组合的总数
@@ -64,12 +71,13 @@ static NSDictionary *hanzi2pinyin;
     return resultArray;
 }
 
-+ (void)setupHashtable {
+- (void)setupHashtable {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         hanzi2pinyin = [[NSDictionary alloc] init];
-        NSString *resourceName =[[NSBundle mainBundle] pathForResource:@"hanzi2pinyin" ofType:@"txt"];
+        NSString *resourceName =[[NSBundle mainBundle] pathForResource:@"hanzi2pinyin_v2" ofType:@"txt"];
         NSString *dictionaryText=[NSString stringWithContentsOfFile:resourceName encoding:NSUTF8StringEncoding error:nil];
+        NSAssert(dictionaryText.length > 0, @"no such file! ");
         NSArray *lines = [dictionaryText componentsSeparatedByString:@"\r\n"];
         __block NSMutableDictionary *tempMap=[[NSMutableDictionary alloc] init];
         [lines enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {

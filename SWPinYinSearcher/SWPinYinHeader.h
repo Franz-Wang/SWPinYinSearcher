@@ -6,5 +6,5 @@
 //  Copyright (c) 2015 SWxs. All rights reserved.
 //
 
-#import "SWPinYinSearcher.h"
-#import "SWPinYinConverter.h"
+#import "NSArray+PinYinSearcher.h"
+#import "NSString+PinYinConverter.h"
